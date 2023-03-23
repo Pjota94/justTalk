@@ -17,7 +17,7 @@ const CardPost = ({ body, id, title, userId }: IPost) => {
       <DivName>
         <FaRegUserCircle
           onClick={() => {
-            listUserID(id);
+            listUserID(userId);
             setTimeout(() => {
               navigate("/user");
             }, 100);
