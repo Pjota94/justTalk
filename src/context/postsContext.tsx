@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 import {
   IComments,
   IPost,
@@ -6,7 +6,6 @@ import {
 } from "../interfaces/postContext.interface";
 import { IProviderProps } from "../interfaces/userContext.interface";
 import { api } from "../services/api";
-import { AuthUserContext } from "./userContext";
 
 export const AuthPostsContext = createContext<IValuePosts>({} as IValuePosts);
 
@@ -14,7 +13,6 @@ const PostContext = ({ children }: IProviderProps) => {
   const [isModalCommets, setModalComments] = useState(false);
   const [post, setPost] = useState<IPost[]>([]);
   const [comments, setComments] = useState<IComments[]>([]);
-  const { users } = useContext(AuthUserContext);
 
   const listPosts = () => {
     api

@@ -4,27 +4,25 @@ import { useContext, useEffect } from "react";
 import { AuthPostsContext } from "../../context/postsContext";
 import { IPost } from "../../interfaces/postContext.interface";
 import { AuthUserContext } from "../../context/userContext";
-import { FaRegUserCircle } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 
 const CardPost = ({ body, id, title, userId }: IPost) => {
-  const { setModalComments, listComments } = useContext(AuthPostsContext);
-  const { listUserID } = useContext(AuthUserContext);
-  const navigate = useNavigate();
+  const { setModalComments, listComments, post } = useContext(AuthPostsContext);
+  const { users, listUsers } = useContext(AuthUserContext);
+
+  useEffect(() => {
+    listUsers();
+  }, [post]);
+
+  const name = users.find((elem) => elem.id === userId);
 
   return (
     <Container>
       <DivName>
-        <FaRegUserCircle
-          onClick={() => {
-            listUserID(userId);
-            setTimeout(() => {
-              navigate("/user");
-            }, 100);
-          }}
-        />
+        <LogoName id={userId}>
+          <span>{name?.name[0]}</span>
+        </LogoName>
         <div className="assistant">
-          <p></p>
+          <p>{name?.name}</p>
           <TfiComments
             id={id}
             onClick={() => {

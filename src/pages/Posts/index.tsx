@@ -3,12 +3,10 @@ import CardPost from "../../components/CardPost";
 import Header from "../../components/Header";
 import ModalComents from "../../components/ModalComents";
 import { AuthPostsContext } from "../../context/postsContext";
-import { AuthUserContext } from "../../context/userContext";
 import { Background, Container } from "./styles";
 
 const Posts = () => {
   const { isModalCommets, listPosts, post } = useContext(AuthPostsContext);
-  const { listUsers } = useContext(AuthUserContext);
 
   useEffect(() => {
     listPosts();
