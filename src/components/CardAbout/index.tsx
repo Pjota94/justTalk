@@ -1,9 +1,10 @@
 import { IUser } from "../../interfaces/userContext.interface";
 import { Container, DivInfo } from "./styles";
+import "animate.css";
 
 const CardAbout = ({ email, website, address, phone, username }: IUser) => {
   return (
-    <Container>
+    <Container className="animate__animated animate__fadeIn">
       <DivInfo>
         <p>UserName</p>
         <span>{username}</span>

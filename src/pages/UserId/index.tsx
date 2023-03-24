@@ -17,6 +17,7 @@ import ModalComents from "../../components/ModalComents";
 import { useNavigate } from "react-router-dom";
 import CardAbout from "../../components/CardAbout";
 import CommentUser from "../../components/CommentUser";
+import "animate.css";
 
 const UserId = () => {
   const [type, setType] = useState("Posts");
@@ -31,7 +32,7 @@ const UserId = () => {
   return (
     <>
       <Header />
-      <Container>
+      <Container className="animate__animated animate__fadeIn">
         <Background>
           <DivPhoto>
             <HiOutlineReply onClick={() => navigate(-1)} />

@@ -3,6 +3,7 @@ import CardUser from "../../components/CardUser";
 import Header from "../../components/Header";
 import { AuthUserContext } from "../../context/userContext";
 import { BoxCards, Container } from "./styles";
+import "animate.css";
 
 const Users = () => {
   const { listUsers, users } = useContext(AuthUserContext);
@@ -14,7 +15,7 @@ const Users = () => {
   return (
     <>
       <Header />
-      <Container>
+      <Container className="animate__animated animate__fadeIn">
         <BoxCards>
           {users.map((elem, index) => (
             <CardUser

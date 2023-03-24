@@ -3,6 +3,8 @@ import { AuthPostsContext } from "../../context/postsContext";
 import { Box, BoxCards, Container } from "./styles";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import CardComents from "../CardComents";
+import "animate.css";
+import { AnimatePresence, motion } from "framer-motion";
 
 const ModalComents = () => {
   const { setModalComments, comments } = useContext(AuthPostsContext);
@@ -25,7 +27,13 @@ const ModalComents = () => {
   return (
     <>
       <Container>
-        <Box ref={modalRef}>
+        <Box
+          ref={modalRef}
+          as={motion.div}
+          exit={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+        >
           <div className="div-header">
             <p></p>
             <h1>Comments</h1>

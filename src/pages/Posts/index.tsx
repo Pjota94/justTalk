@@ -4,6 +4,8 @@ import Header from "../../components/Header";
 import ModalComents from "../../components/ModalComents";
 import { AuthPostsContext } from "../../context/postsContext";
 import { Container, Content } from "./styles";
+import "animate.css";
+import { AnimatePresence } from "framer-motion";
 
 const Posts = () => {
   const { isModalCommets, listPosts, post } = useContext(AuthPostsContext);
@@ -15,7 +17,7 @@ const Posts = () => {
   return (
     <>
       <Header />
-      <Container>
+      <Container className="animate__animated animate__fadeIn">
         <Content>
           {post.map((elem, index) => (
             <CardPost
@@ -28,7 +30,7 @@ const Posts = () => {
           ))}
         </Content>
       </Container>
-      {isModalCommets && <ModalComents />}
+      <AnimatePresence>{isModalCommets && <ModalComents />}</AnimatePresence>
     </>
   );
 };

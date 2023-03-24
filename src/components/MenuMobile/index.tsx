@@ -2,6 +2,7 @@ import { Container, DivButtons } from "./styles";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 const MenuMobile = ({ active }: any) => {
   const closeMenu = () => {
@@ -28,7 +29,13 @@ const MenuMobile = ({ active }: any) => {
   }, [active]);
 
   return (
-    <Container ref={modalRef}>
+    <Container
+      ref={modalRef}
+      as={motion.div}
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+    >
       <div className="btn-close">
         <button>
           <AiOutlineCloseCircle onClick={closeMenu} />

@@ -1,8 +1,9 @@
 import { Container } from "./styles";
+import "animate.css";
 
 const CommentUser = () => {
   return (
-    <Container>
+    <Container className="animate__animated animate__fadeIn">
       <h1>no comments</h1>
     </Container>
   );

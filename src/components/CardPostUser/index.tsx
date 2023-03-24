@@ -2,14 +2,14 @@ import { Container, DivComment, DivOptions } from "./styles";
 import { useContext, useEffect } from "react";
 import { AuthPostsContext } from "../../context/postsContext";
 import { IPost } from "../../interfaces/postContext.interface";
-import { AuthUserContext } from "../../context/userContext";
 import { FaRegComment } from "react-icons/fa";
+import "animate.css";
 
 const CardPostUser = ({ body, id, title, userId }: IPost) => {
   const { setModalComments, listComments } = useContext(AuthPostsContext);
 
   return (
-    <Container>
+    <Container className="animate__animated animate__fadeIn">
       <h1>{title}</h1>
       <p>{body}</p>
       <DivOptions>
