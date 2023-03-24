@@ -5,7 +5,6 @@ export const Container = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   width: 735px;
-  height: 159px;
   margin: 10px 0px;
   border: 1px solid #055680;
 
@@ -30,12 +29,11 @@ export const Container = styled.div`
     line-height: 22px;
     color: #000000;
     width: 685px;
-    height: 76px;
+    margin-bottom: 20px;
   }
 
   @media (max-width: 873px) {
     width: 644px;
-    height: 194px;
 
     > h1 {
       font-size: 15px;
@@ -44,13 +42,11 @@ export const Container = styled.div`
 
     > p {
       width: 591px;
-      height: 101px;
     }
   }
 
   @media (max-width: 715px) {
     width: 327px;
-    height: 225px;
 
     > h1 {
       font-size: 13px;
@@ -60,7 +56,6 @@ export const Container = styled.div`
     > p {
       margin-left: 15px;
       width: 299px;
-      height: 142px;
       font-size: 12px;
     }
   }
@@ -71,6 +66,7 @@ export const DivOptions = styled.div`
   display: flex;
   align-items: center;
   margin-left: 29px;
+  margin-bottom: 5px;
 
   @media (max-width: 715px) {
     margin-left: 15px;

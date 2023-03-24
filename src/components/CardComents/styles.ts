@@ -6,7 +6,6 @@ export const Container = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   width: 447px;
-  height: 149px;
 
   h1 {
     font-family: "Plus Jakarta Sans";
@@ -15,8 +14,8 @@ export const Container = styled.div`
     font-size: 15px;
     line-height: 19px;
     margin-left: 21px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 7px;
+    margin-bottom: 7px;
   }
 
   h2 {
@@ -26,17 +25,20 @@ export const Container = styled.div`
     font-size: 13px;
     line-height: 14px;
     margin-left: 21px;
+    margin-bottom: 20px;
+    width: 415px;
   }
 
   @media (max-width: 540px) {
     width: 303px;
-    height: 176px;
+
     h1 {
       font-size: 13px;
     }
 
     h2 {
       font-size: 12px;
+      width: 245px;
     }
   }
 `;

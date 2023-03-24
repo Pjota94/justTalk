@@ -6,7 +6,6 @@ export const Container = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   width: 545px;
-  height: 127px;
   margin: 10px 0px;
 
   > h1 {
@@ -27,12 +26,11 @@ export const Container = styled.div`
     font-size: 13px;
     line-height: 16px;
     margin-left: 15px;
-    height: 66px;
+    margin-bottom: 20px;
   }
 
   @media (max-width: 755px) {
     width: 303px;
-    height: 176px;
     > h1 {
       font-size: 13px;
       line-height: 18px;
@@ -40,7 +38,6 @@ export const Container = styled.div`
 
     > p {
       font-size: 12px;
-      height: 101px;
     }
   }
 `;
@@ -50,6 +47,7 @@ export const DivOptions = styled.div`
   display: flex;
   align-items: center;
   margin-left: 15px;
+  margin-bottom: 10px;
 `;
 
 export const DivComment = styled.div`

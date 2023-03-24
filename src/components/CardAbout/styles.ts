@@ -18,13 +18,13 @@ export const DivInfo = styled.div`
   display: flex;
   margin-top: 14px;
   margin-bottom: 14px;
+  align-items: center;
 
   > p {
     font-family: "Plus Jakarta Sans";
     font-style: normal;
     font-weight: 600;
     font-size: 15px;
-    line-height: 19px;
     width: 205px;
   }
 
@@ -33,20 +33,17 @@ export const DivInfo = styled.div`
     font-style: normal;
     font-weight: 600;
     font-size: 15px;
-    line-height: 19px;
     color: #73797c;
   }
 
   @media (max-width: 755px) {
     > p {
       font-size: 14px;
-      line-height: 18px;
       width: 94px;
     }
 
     > span {
       font-size: 13px;
-      line-height: 14px;
     }
   }
 `;
