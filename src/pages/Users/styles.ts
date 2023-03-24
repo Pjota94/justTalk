@@ -8,7 +8,7 @@ export const Container = styled.div`
 
 export const BoxCards = styled.div`
   width: 892px;
-  height: 555px;
+  height: 556px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
