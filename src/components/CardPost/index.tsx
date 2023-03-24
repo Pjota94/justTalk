@@ -24,7 +24,14 @@ const CardPost = ({ body, id, title, userId }: IPost) => {
       <p>{body}</p>
       <DivOptions>
         <DivUser>
-          <HiOutlineUser />
+          <HiOutlineUser
+            onClick={() => {
+              listUserID(userId);
+              setTimeout(() => {
+                navigate("/user");
+              }, 100);
+            }}
+          />
           <span
             id={userId}
             onClick={() => {
@@ -38,7 +45,14 @@ const CardPost = ({ body, id, title, userId }: IPost) => {
           </span>
         </DivUser>
         <DivComment>
-          <FaRegComment />
+          <FaRegComment
+            onClick={() => {
+              listComments(id);
+              setTimeout(() => {
+                setModalComments(true);
+              }, 200);
+            }}
+          />
           <span
             onClick={() => {
               listComments(id);

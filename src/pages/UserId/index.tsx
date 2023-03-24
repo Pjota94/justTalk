@@ -34,7 +34,7 @@ const UserId = () => {
       <Container>
         <Background>
           <DivPhoto>
-            <HiOutlineReply onClick={() => navigate("/users")} />
+            <HiOutlineReply onClick={() => navigate(-1)} />
             <div className="info-name">
               <img src={perfil} alt="" />
               <h1>{user.name}</h1>

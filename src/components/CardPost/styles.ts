@@ -84,6 +84,7 @@ export const DivUser = styled.div`
   > svg {
     font-size: 18px;
     margin-right: 6px;
+    cursor: pointer;
   }
 
   > span {
@@ -105,6 +106,7 @@ export const DivComment = styled.div`
 
   > svg {
     margin-right: 6px;
+    cursor: pointer;
   }
 
   > span {
