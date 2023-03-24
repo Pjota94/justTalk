@@ -5,7 +5,11 @@
     # Abra o terminal e Clone este repositório
     $ git clone git@github.com:Pjota94/justTalk.git
 
-    # Abra o projeto no VsCode
+    # Ainda no terminal, digite o comando para entrar no projeto
+    $ cd justTalk
+
+    # E execute o comando para abrir o projeto.
+    $ code .
 
     # Abra o terminal do VsCode e instale as dependências do projeto
     $ yarn install
