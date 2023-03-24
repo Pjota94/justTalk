@@ -9,10 +9,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   body{
-    background-image: url(${background});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    background: rgba(15, 104, 150, 0.13);
   }
   button{
     cursor: pointer;

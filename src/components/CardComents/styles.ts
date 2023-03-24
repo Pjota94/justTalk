@@ -1,57 +1,42 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: #d9d9d9;
-  border: 1px solid #000000;
-  border-radius: 20px;
-  width: 612px;
-  height: 185px;
-  margin-bottom: 10px;
+  background: #ffffff;
+  border: 1px solid #055680;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  width: 447px;
+  height: 149px;
 
   h1 {
-    font-family: "Inter";
+    font-family: "Plus Jakarta Sans";
     font-style: normal;
     font-weight: 600;
-    font-size: 17px;
-    line-height: 21px;
-    color: #000000;
-    margin-left: 31px;
-    margin-top: 9px;
-    margin-bottom: 9px;
+    font-size: 15px;
+    line-height: 19px;
+    margin-left: 21px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   h2 {
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    font-size: 17px;
-    line-height: 21px;
-    color: #000000;
-    margin-left: 31px;
+    font-size: 13px;
+    line-height: 14px;
+    margin-left: 21px;
   }
 
-  @media (max-width: 715px) {
-    width: 283px;
-    height: 185px;
-
+  @media (max-width: 540px) {
+    width: 303px;
+    height: 176px;
     h1 {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 600;
-      font-size: 12px;
-      line-height: 15px;
-      color: #000000;
-      margin-left: 16px;
+      font-size: 13px;
     }
 
     h2 {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 400;
       font-size: 12px;
-      line-height: 15px;
-      margin-left: 16px;
-      color: #000000;
     }
   }
 `;
@@ -63,18 +48,15 @@ export const DivHeader = styled.div`
   align-items: center;
 
   p {
-    font-family: "JetBrains Mono";
+    font-family: "Plus Jakarta Sans";
     font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 22px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
     color: #000000;
   }
 
-  @media (max-width: 715px) {
-    p {
-      font-size: 12px;
-    }
+  @media (max-width: 540px) {
   }
 `;
 
@@ -87,22 +69,19 @@ export const LogoName = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 30px;
+  margin-left: 21px;
 
   span {
-    font-family: "JetBrains Mono";
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    font-size: 21px;
-    line-height: 28px;
+    font-size: 18px;
+    line-height: 22px;
     color: #ffffff;
   }
 
-  @media (max-width: 715px) {
-    margin-left: 17px;
-
+  @media (max-width: 540px) {
     span {
-      font-size: 15px;
     }
   }
 `;

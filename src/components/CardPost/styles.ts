@@ -1,123 +1,119 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 739px;
-  height: 178px;
-  background: rgba(217, 217, 217, 0.45);
-  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  width: 735px;
+  height: 159px;
   margin: 10px 0px;
+  border: 1px solid #055680;
 
-  .assistant {
-    display: flex;
-    justify-content: space-between;
-    width: 671px;
-  }
-
-  h2 {
-    font-family: "Inter";
+  > h1 {
+    font-family: "Plus Jakarta Sans";
     font-style: normal;
     font-weight: 600;
-    font-size: 17px;
-    line-height: 15px;
+    font-size: 18px;
+    line-height: 30px;
+    margin-left: 29px;
     color: #000000;
-    margin: 12px 0px 12px 22px;
+    margin-top: 15px;
+    margin-bottom: 9px;
   }
 
   > p {
+    margin-left: 29px;
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    font-size: 17px;
-    line-height: 15px;
+    font-size: 13px;
+    line-height: 22px;
     color: #000000;
-    margin-left: 22px;
-    width: 674px;
+    width: 685px;
+    height: 76px;
   }
 
-  @media (max-width: 830px) {
-    width: 700px;
-    .assistant {
-      width: 631px;
-    }
-  }
+  @media (max-width: 873px) {
+    width: 644px;
+    height: 194px;
 
-  @media (max-width: 768px) {
-    width: 251px;
-    height: 233px;
-
-    .assistant {
-      width: 184px;
+    > h1 {
+      font-size: 15px;
+      line-height: 15px;
     }
 
     > p {
-      width: 232px;
-      font-size: 12px;
-      padding-right: 12px;
+      width: 591px;
+      height: 101px;
+    }
+  }
+
+  @media (max-width: 715px) {
+    width: 327px;
+    height: 225px;
+
+    > h1 {
+      font-size: 13px;
+      margin-left: 15px;
     }
 
-    h2 {
+    > p {
+      margin-left: 15px;
+      width: 299px;
+      height: 142px;
       font-size: 12px;
-      width: 235px;
-      padding-right: 12px;
     }
   }
 `;
 
-export const DivName = styled.div`
-  height: 47px;
-  border-bottom: 1px solid rgba(6, 41, 74, 0.29);
+export const DivOptions = styled.div`
+  width: 235px;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  padding-left: 22px;
+  margin-left: 29px;
 
-  p {
-    font-family: "JetBrains Mono";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 22px;
-    color: #000000;
+  @media (max-width: 715px) {
+    margin-left: 15px;
   }
+`;
 
-  svg {
-    font-size: 22px;
-    cursor: pointer;
-  }
-
-  svg:hover {
-    -webkit-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    transform: scale(1.2);
-    transition: 300ms linear;
+export const DivUser = styled.div`
+  &&:hover {
     color: #055680;
   }
-`;
-
-export const LogoName = styled.div`
-  width: 25px;
-  height: 25px;
-  background: #055680;
-  border-radius: 50px;
-  margin-right: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-
-  &&:hover {
-    -webkit-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    transform: scale(1.2);
-    transition: 300ms linear;
+  > svg {
+    font-size: 18px;
+    margin-right: 6px;
   }
 
-  span {
-    font-family: "JetBrains Mono";
+  > span {
+    font-family: "Plus Jakarta Sans";
     font-style: normal;
-    font-weight: 400;
-    font-size: 21px;
-    line-height: 28px;
-    color: #ffffff;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 14px;
+    color: #000000;
+    margin-right: 16px;
+    cursor: pointer;
+  }
+`;
+
+export const DivComment = styled.div`
+  &&:hover {
+    color: #055680;
+  }
+
+  > svg {
+    margin-right: 6px;
+  }
+
+  > span {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 14px;
+    color: #000000;
+    cursor: pointer;
   }
 `;

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef } from "react";
 import { AuthPostsContext } from "../../context/postsContext";
-import { Box, Container } from "./styles";
+import { Box, BoxCards, Container } from "./styles";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import CardComents from "../CardComents";
 
@@ -31,15 +31,17 @@ const ModalComents = () => {
             <h1>Comments</h1>
             <AiOutlineCloseCircle onClick={() => setModalComments(false)} />
           </div>
-          <div className="div-cards">
-            {comments.map((elem, index) => (
-              <CardComents
-                key={index}
-                name={elem.name}
-                email={elem.email}
-                body={elem.body}
-              />
-            ))}
+          <div className="assistant">
+            <BoxCards>
+              {comments.map((elem, index) => (
+                <CardComents
+                  key={index}
+                  email={elem.email}
+                  name={elem.name}
+                  body={elem.body}
+                />
+              ))}
+            </BoxCards>
           </div>
         </Box>
       </Container>

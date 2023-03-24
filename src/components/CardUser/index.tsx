@@ -2,42 +2,39 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthUserContext } from "../../context/userContext";
 import { IUser } from "../../interfaces/userContext.interface";
-import { BackgroundInfo, Container, DivInfos, DivUser } from "./styles";
+import { Container, DivHeader, DivInfos } from "./styles";
+import { HiInformationCircle } from "react-icons/hi";
 
 const CardUser = ({ email, name, username, website, id }: IUser) => {
   const { listUserID } = useContext(AuthUserContext);
   const navigate = useNavigate();
 
   return (
-    <Container
-      id={id}
-      onClick={() => {
-        listUserID(id);
-        setTimeout(() => {
-          navigate("/user");
-        }, 100);
-      }}
-    >
-      <DivUser>
-        <p>{username}</p>
-      </DivUser>
+    <Container>
+      <DivHeader>
+        <p></p>
+        <h1>{name}</h1>
+        <HiInformationCircle
+          id={id}
+          onClick={() => {
+            listUserID(id);
+            setTimeout(() => {
+              navigate("/user");
+            }, 100);
+          }}
+        />
+      </DivHeader>
       <DivInfos>
-        <BackgroundInfo>
-          <span>Name</span>
-        </BackgroundInfo>
-        <p>{name}</p>
+        <p>Username</p>
+        <span>{username}</span>
       </DivInfos>
       <DivInfos>
-        <BackgroundInfo>
-          <span>Email</span>
-        </BackgroundInfo>
-        <p>{email}</p>
+        <p>Email</p>
+        <span>{email}</span>
       </DivInfos>
       <DivInfos>
-        <BackgroundInfo>
-          <span>Site</span>
-        </BackgroundInfo>
-        <p>{website}</p>
+        <p>Site</p>
+        <span>{website}</span>
       </DivInfos>
     </Container>
   );

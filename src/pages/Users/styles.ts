@@ -1,24 +1,20 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const Background = styled.div`
-  width: 686px;
-  height: 605px;
-  background: rgba(217, 217, 217, 0.53);
-  border-radius: 8px;
+export const BoxCards = styled.div`
+  width: 892px;
+  height: 555px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center;
+  gap: 50px;
   overflow-y: scroll;
-  gap: 5px;
+  margin-bottom: 50px;
 
   &&::-webkit-scrollbar {
     height: 5px;
@@ -29,8 +25,11 @@ export const Background = styled.div`
     border-radius: 5px;
   }
 
-  @media (max-width: 725px) {
-    width: 330px;
-    overflow-y: scroll;
+  @media (max-width: 870px) {
+    width: 444px;
+  }
+
+  @media (max-width: 474px) {
+    width: 369px;
   }
 `;

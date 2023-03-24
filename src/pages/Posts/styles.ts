@@ -1,24 +1,22 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const Background = styled.div`
-  width: 805px;
-  height: 576px;
-  background: rgba(217, 217, 217, 0.53);
-  border-radius: 8px;
+export const Content = styled.div`
+  width: 827px;
+  height: 724px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 12px;
   overflow-y: scroll;
   flex-flow: wrap;
+  margin-bottom: 40px;
 
   &&::-webkit-scrollbar {
     height: 5px;
@@ -29,11 +27,11 @@ export const Background = styled.div`
     border-radius: 5px;
   }
 
-  @media (max-width: 830px) {
-    width: 739px;
+  @media (max-width: 873px) {
+    width: 678px;
   }
 
-  @media (max-width: 768px) {
-    width: 281px;
+  @media (max-width: 715px) {
+    width: 360px;
   }
 `;

@@ -1,28 +1,89 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import Header from "../../components/Header";
-import InfoUser from "../../components/InfoUser";
 import { AuthUserContext } from "../../context/userContext";
-import { Background, Container, Content } from "./styles";
+import {
+  Background,
+  BoxContent,
+  Container,
+  Content,
+  DivButtons,
+  DivPhoto,
+} from "./styles";
+import { HiOutlineReply } from "react-icons/hi";
+import perfil from "../../assets/perfil.png";
+import { AuthPostsContext } from "../../context/postsContext";
+import CardPostUser from "../../components/CardPostUser";
+import ModalComents from "../../components/ModalComents";
+import { useNavigate } from "react-router-dom";
+import CardAbout from "../../components/CardAbout";
+import CommentUser from "../../components/CommentUser";
 
 const UserId = () => {
+  const [type, setType] = useState("Posts");
   const { user } = useContext(AuthUserContext);
+  const { listPosts, post, isModalCommets } = useContext(AuthPostsContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    listPosts();
+  }, []);
+
   return (
-    <Container>
+    <>
       <Header />
-      <Content>
-        <div className="assistant">
-          <Background>
-            <h1>{user.name}</h1>
-          </Background>
-          <InfoUser one={"User"} two={`${user.username}`} />
-          <InfoUser one={"Email"} two={`${user.email}`} />
-          <InfoUser one={"Site"} two={`${user.website}`} />
-          <InfoUser one={"Phone"} two={`${user.phone}`} />
-          <InfoUser one={"City"} two={`${user.address?.city}`} />
-          <InfoUser one={"Street"} two={`${user.address?.street}`} />
-        </div>
-      </Content>
-    </Container>
+      <Container>
+        <Background>
+          <DivPhoto>
+            <HiOutlineReply onClick={() => navigate("/users")} />
+            <div className="info-name">
+              <img src={perfil} alt="" />
+              <h1>{user.name}</h1>
+            </div>
+          </DivPhoto>
+          <DivButtons>
+            <button onClick={() => setType("Posts")}>Recentes Posts</button>
+            <button onClick={() => setType("Comments")}>
+              Recentes Comments
+            </button>
+            <button onClick={() => setType("Infos")}>About</button>
+          </DivButtons>
+          <BoxContent>
+            <Content>
+              {type === "Posts" ? (
+                post
+                  .filter((elem) => elem.userId === user.id)
+                  .map((elem, index) => (
+                    <CardPostUser
+                      key={index}
+                      body={elem.body}
+                      title={elem.title}
+                      id={elem.id}
+                      userId={elem.userId}
+                    />
+                  ))
+              ) : (
+                <></>
+              )}
+              {type === "Infos" ? (
+                <CardAbout
+                  username={user.username}
+                  email={user.email}
+                  phone={user.phone}
+                  website={user.website}
+                  address={user.address}
+                  name={""}
+                  id={""}
+                />
+              ) : (
+                <></>
+              )}
+              {type === "Comments" ? <CommentUser /> : <></>}
+            </Content>
+          </BoxContent>
+        </Background>
+      </Container>
+      {isModalCommets && <ModalComents />}
+    </>
   );
 };
 

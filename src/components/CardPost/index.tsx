@@ -1,13 +1,16 @@
-import { Container, DivName, LogoName } from "./styles";
-import { TfiComments } from "react-icons/tfi";
+import { Container, DivComment, DivOptions, DivUser } from "./styles";
 import { useContext, useEffect } from "react";
 import { AuthPostsContext } from "../../context/postsContext";
 import { IPost } from "../../interfaces/postContext.interface";
 import { AuthUserContext } from "../../context/userContext";
+import { HiOutlineUser } from "react-icons/hi";
+import { FaRegComment } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const CardPost = ({ body, id, title, userId }: IPost) => {
   const { setModalComments, listComments, post } = useContext(AuthPostsContext);
-  const { users, listUsers } = useContext(AuthUserContext);
+  const { users, listUsers, listUserID } = useContext(AuthUserContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     listUsers();
@@ -17,25 +20,37 @@ const CardPost = ({ body, id, title, userId }: IPost) => {
 
   return (
     <Container>
-      <DivName>
-        <LogoName id={userId}>
-          <span>{name?.name[0]}</span>
-        </LogoName>
-        <div className="assistant">
-          <p>{name?.name}</p>
-          <TfiComments
-            id={id}
+      <h1>{title}</h1>
+      <p>{body}</p>
+      <DivOptions>
+        <DivUser>
+          <HiOutlineUser />
+          <span
+            id={userId}
+            onClick={() => {
+              listUserID(userId);
+              setTimeout(() => {
+                navigate("/user");
+              }, 100);
+            }}
+          >
+            {name?.username}
+          </span>
+        </DivUser>
+        <DivComment>
+          <FaRegComment />
+          <span
             onClick={() => {
               listComments(id);
               setTimeout(() => {
                 setModalComments(true);
               }, 200);
             }}
-          />
-        </div>
-      </DivName>
-      <h2>{title}</h2>
-      <p>{body}</p>
+          >
+            Comments
+          </span>
+        </DivComment>
+      </DivOptions>
     </Container>
   );
 };

@@ -3,7 +3,7 @@ import CardPost from "../../components/CardPost";
 import Header from "../../components/Header";
 import ModalComents from "../../components/ModalComents";
 import { AuthPostsContext } from "../../context/postsContext";
-import { Background, Container } from "./styles";
+import { Container, Content } from "./styles";
 
 const Posts = () => {
   const { isModalCommets, listPosts, post } = useContext(AuthPostsContext);
@@ -14,23 +14,19 @@ const Posts = () => {
 
   return (
     <>
+      <Header />
       <Container>
-        <Header />
-        <div className="content">
-          <Background>
-            <div className="scroll">
-              {post.map((elem, index) => (
-                <CardPost
-                  key={index}
-                  userId={elem.userId}
-                  id={elem.id}
-                  title={elem.title}
-                  body={elem.body}
-                />
-              ))}
-            </div>
-          </Background>
-        </div>
+        <Content>
+          {post.map((elem, index) => (
+            <CardPost
+              key={index}
+              body={elem.body}
+              title={elem.title}
+              userId={elem.userId}
+              id={elem.id}
+            />
+          ))}
+        </Content>
       </Container>
       {isModalCommets && <ModalComents />}
     </>

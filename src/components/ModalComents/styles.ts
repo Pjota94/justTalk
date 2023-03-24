@@ -7,27 +7,24 @@ export const Container = styled.div`
   left: 0;
   z-index: 1;
   position: fixed;
-  background-color: rgb(20 19 19 / 47%);
+  background: rgba(0, 0, 0, 0.44);
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .assistant {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const Box = styled.div`
-  width: 665px;
-  height: 714px;
-  background: #d9d9d9;
-  border-radius: 8px;
-  overflow-y: scroll;
-
-  &&::-webkit-scrollbar {
-    height: 5px;
-    width: 5px;
-  }
-  &&::-webkit-scrollbar-thumb {
-    background: #055680;
-    border-radius: 5px;
-  }
+  width: 491px;
+  height: 642px;
+  background: #ffffff;
+  border: 1px solid #055680;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
 
   .div-header {
     display: flex;
@@ -40,11 +37,11 @@ export const Box = styled.div`
     }
 
     > h1 {
-      font-family: "Josefin Sans";
+      font-family: "Plus Jakarta Sans";
       font-style: normal;
-      font-weight: 400;
-      font-size: 29px;
-      line-height: 29px;
+      font-weight: 600;
+      font-size: 19px;
+      line-height: 24px;
       color: #000000;
       margin-top: 12px;
     }
@@ -57,29 +54,36 @@ export const Box = styled.div`
     }
 
     > svg:hover {
-      -webkit-transform: scale(1.5);
-      -ms-transform: scale(1.5);
-      transform: scale(1.2);
-      transition: 300ms linear;
       color: #055680;
     }
   }
-  .div-cards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+
+  @media (max-width: 540px) {
+    width: 332px;
+  }
+`;
+
+export const BoxCards = styled.div`
+  width: 469px;
+  height: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  overflow-y: scroll;
+  flex-flow: wrap;
+  justify-content: center;
+
+  &&::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+  &&::-webkit-scrollbar-thumb {
+    background: #055680;
+    border-radius: 5px;
   }
 
-  @media (max-width: 715px) {
-    width: 338px;
-
-    > svg {
-      margin-right: 20px;
-    }
-  }
-
-  @media (max-width: 1316px) {
-    height: 592px;
+  @media (max-width: 540px) {
+    width: 320px;
   }
 `;

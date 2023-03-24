@@ -1,65 +1,81 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 289px;
-  height: 164px;
-  background: rgba(217, 217, 217, 0.45);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  margin: 10px 0;
-  cursor: pointer;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  width: 401px;
+  height: 149px;
+  border: 1px solid #055680;
+
+  @media (max-width: 474px) {
+    width: 330px;
+  }
 `;
 
-export const DivUser = styled.div`
+export const DivHeader = styled.div`
+  height: 41px;
+  border-bottom: 1px solid #055680;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(6, 41, 74, 0.29);
-  height: 49px;
-  margin-bottom: 14px;
 
-  p {
-    font-family: "Josefin Sans";
+  > p {
+    margin-left: 40px;
+  }
+
+  > h1 {
+    font-family: "Plus Jakarta Sans";
     font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 22px;
-    color: #000000;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  > svg {
+    color: #055680;
+    font-size: 25px;
+    cursor: pointer;
+    margin-right: 25px;
+  }
+
+  @media (max-width: 474px) {
+    > h1 {
+      font-size: 17px;
+    }
   }
 `;
 
 export const DivInfos = styled.div`
   display: flex;
-  margin-left: 14px;
+  margin-left: 19px;
+  > p {
+    width: 160px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    margin-top: 14px;
+  }
 
-  p {
+  > span {
+    margin-top: 14px;
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
     line-height: 18px;
-    color: #000000;
   }
-`;
 
-export const BackgroundInfo = styled.div`
-  width: 43px;
-  height: 21px;
-  background: #055680;
-  border-radius: 13px;
-  margin-right: 9px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @media (max-width: 474px) {
+    > p {
+      width: 113px;
+      font-size: 13px;
+    }
 
-  span {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
-    color: #ffffff;
+    > span {
+      font-size: 13px;
+    }
   }
 `;

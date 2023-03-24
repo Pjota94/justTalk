@@ -7,7 +7,7 @@ export const Container = styled.div`
     font-weight: 700;
     font-size: 64px;
     line-height: 64px;
-    color: #ffffff;
+    color: #055680;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 

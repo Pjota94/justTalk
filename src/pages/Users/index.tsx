@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import CardUser from "../../components/CardUser";
 import Header from "../../components/Header";
 import { AuthUserContext } from "../../context/userContext";
-import { Background, Container } from "./styles";
+import { BoxCards, Container } from "./styles";
 
 const Users = () => {
   const { listUsers, users } = useContext(AuthUserContext);
@@ -12,23 +12,23 @@ const Users = () => {
   }, []);
 
   return (
-    <Container>
+    <>
       <Header />
-      <div className="content">
-        <Background>
+      <Container>
+        <BoxCards>
           {users.map((elem, index) => (
             <CardUser
               key={index}
               name={elem.name}
               username={elem.username}
-              email={elem.email}
               website={elem.website}
+              email={elem.email}
               id={elem.id}
             />
           ))}
-        </Background>
-      </div>
-    </Container>
+        </BoxCards>
+      </Container>
+    </>
   );
 };
 
