@@ -61,7 +61,7 @@ export const DivButtons = styled.div`
   gap: 34px;
   margin-top: 58px;
 
-  > button {
+  /* > button {
     border: none;
     background-color: transparent;
     font-family: "Plus Jakarta Sans";
@@ -69,7 +69,7 @@ export const DivButtons = styled.div`
     font-weight: 600;
     font-size: 15px;
     line-height: 19px;
-  }
+  } */
 
   @media (max-width: 755px) {
     gap: 16px;
@@ -110,4 +110,25 @@ export const Content = styled.div`
   @media (max-width: 755px) {
     width: 325px;
   }
+`;
+
+export const ButtonFocus = styled.button`
+  border: none;
+  background-color: transparent;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 19px;
+  border-bottom: 2px solid #055680;
+`;
+
+export const ButtonNoFocus = styled.button`
+  border: none;
+  background-color: transparent;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 19px;
 `;

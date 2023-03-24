@@ -4,6 +4,8 @@ import { AuthUserContext } from "../../context/userContext";
 import {
   Background,
   BoxContent,
+  ButtonFocus,
+  ButtonNoFocus,
   Container,
   Content,
   DivButtons,
@@ -42,11 +44,31 @@ const UserId = () => {
             </div>
           </DivPhoto>
           <DivButtons>
-            <button onClick={() => setType("Posts")}>Recentes Posts</button>
-            <button onClick={() => setType("Comments")}>
-              Recentes Comments
-            </button>
-            <button onClick={() => setType("Infos")}>About</button>
+            {type === "Posts" ? (
+              <ButtonFocus onClick={() => setType("Posts")}>
+                Recentes Posts
+              </ButtonFocus>
+            ) : (
+              <ButtonNoFocus onClick={() => setType("Posts")}>
+                Recentes Posts
+              </ButtonNoFocus>
+            )}
+            {type === "Comments" ? (
+              <ButtonFocus onClick={() => setType("Comments")}>
+                Recentes Comments
+              </ButtonFocus>
+            ) : (
+              <ButtonNoFocus onClick={() => setType("Comments")}>
+                Recentes Comments
+              </ButtonNoFocus>
+            )}
+            {type === "Infos" ? (
+              <ButtonFocus onClick={() => setType("Infos")}>About</ButtonFocus>
+            ) : (
+              <ButtonNoFocus onClick={() => setType("Infos")}>
+                About
+              </ButtonNoFocus>
+            )}
           </DivButtons>
           <BoxContent>
             <Content>

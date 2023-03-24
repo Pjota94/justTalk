@@ -33,7 +33,7 @@ export const Container = styled.header`
 `;
 
 export const DivButtons = styled.div`
-  button {
+  > button {
     font-family: "Josefin Sans";
     font-style: normal;
     font-weight: 400;
