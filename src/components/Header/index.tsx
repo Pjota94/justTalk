@@ -21,10 +21,7 @@ const Header = () => {
       <div className="div-content">
         <button className="btn-close">
           {menu === false ? (
-            <FiMenu
-              onClick={showMenu}
-              className="animate__animated animate__flipInX"
-            />
+            <FiMenu onClick={showMenu} />
           ) : (
             <CgClose
               onClick={showMenu}
