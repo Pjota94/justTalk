@@ -43,7 +43,7 @@ export const DivButtons = styled.div`
     border: none;
     background-color: transparent;
     margin-left: 30px;
-    height: 30px;
+    height: 29px;
   }
 
   button:hover {
